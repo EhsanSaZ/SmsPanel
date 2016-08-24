@@ -1,11 +1,13 @@
 
+@font-face {
+    font-family: "B Yekan";
+    src: url("./font/BYekan.eot");
+    src: url("./font/BYekan.eot?#iefix") format("embedded-opentype"),
+    url("./font/BYekan.ttf") format("truetype"),
+    url("./font/BYekan.woff") format("woff");
+}
+
 body {
-    /* background: url("../images/bg-download.jpg");;
-     background-attachment: fixed;
-     -webkit-background-size: cover;
-     -moz-background-size: cover;
-     -o-background-size: cover;
-     background-size: cover;*/
     font-family: "B Yekan";
     font-size: 18px;
     background-color:#8c8c8c;
@@ -16,5 +18,40 @@ body nav#nav_bar {
 }
 .cols_height{
     overflow-x: auto;
-    overflow-y: scroll;
+    overflow-y: auto;
+
+}
+.header_icons{
+    color: white;
+}
+.new_massage_btn{
+    width: 150px;px;
+    height: 36px;
+    border-radius: 5px;
+    border: 2px solid rgb(139,195,74);
+    background-color: #F1FFE9;
+}
+.header_border{
+    border-bottom: 1vh solid rgb(139,195,74);
+}
+.header_items{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.sort_button{
+    background-color:#8d8d8d;
+}
+.sort_button:hover{
+    color: black;
+    background-color:#ffe200 ;
+}
+.header_li{
+    height: 50px;
+}
+.link{
+    color: black;
+    cursor: pointer;
+}
+.onhover:hover{
+    color: #ffe200;
 }
