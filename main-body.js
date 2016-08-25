@@ -2,16 +2,84 @@
  * Created by esaeedizadeh on 8/20/2016.
  */
 import React from 'react';
-
-var TextArea = React.createClass({
+var SmsAreaBottom = React.createClass({
     render:function () {
         return(
-            <div className="col-sm-7 cols_height" style={{backgroundColor:"#F9B4FF",
-                height: "90vh", minHeight :"90vh"}}>
-                <h1>در</h1>
-                <h1>دست</h1>
-                <h1>ساخت</h1>
-                <h1>به زودی</h1>
+            <div style={{minHeight:"80px",backgroundColor:"lightblue"}}>
+
+            </div>
+        );
+    }
+});
+
+var SmsAreaTopSetting = React.createClass({
+    render:function () {
+        return(
+                <div style={{display:"flex",backgroundColor:"lightgray",paddingLeft:"10px",
+                    paddingRight:"10px"}}>
+                    <div style={{width:"100%" ,direction:"rtl",marginTop:"15px"}}>
+                        <ul className="list-inline">
+                            <li>
+                                <a className="link ">
+                                    <i className="fa fa-folder-open fa-lg onhover" aria-hidden="true" style={{marginLeft:"10px"}}></i>
+                                    انتقال
+                                </a>
+                            </li>
+                            <li>
+                                <a className="link ">
+                                    <i className="fa fa-trash fa-lg onhover" aria-hidden="true" style={{marginLeft:"10px"}}></i>
+                                    حذف
+                                </a>
+                            </li>
+                            <li>
+                                <a className="link ">
+                                    <i className="fa fa-print fa-lg onhover" aria-hidden="true" style={{marginLeft:"10px"}}></i>
+                                    چاپ
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+        );
+    }
+});
+var SmsRows = React.createClass({
+    render:function () {
+        return(
+            <div>
+
+            </div>
+        );
+    }
+});
+var SmsAreaTopShowChat = React.createClass({
+    render:function () {
+        return(
+            <div>
+
+            </div>
+        );
+    }
+});
+var SmsAreaTop = React.createClass({
+    render:function () {
+        return(
+            <div>
+                <hr/>
+                <SmsAreaTopSetting/>
+                <hr/>
+                <SmsAreaTopShowChat/>
+            </div>
+        );
+    }
+});
+var SmsArea = React.createClass({
+    render:function () {
+        return(
+            <div className="col-sm-7 cols_height" style={{height: "90vh", minHeight :"90vh",backgroundColor:"#F1FFE9"}}>
+                <SmsAreaTop/>
+                <SmsAreaBottom/>
             </div>
         );
     }
@@ -85,8 +153,6 @@ var ChatPreviewRowBottom= React.createClass({
         );
     }
 });
-
-
 var ChatPreviewRow = React.createClass({
     render:function () {
         return(
@@ -97,7 +163,6 @@ var ChatPreviewRow = React.createClass({
         );
     }
 });
-
 var SmsList = React.createClass({
     render:function () {
         var smsNodes =this.props.data.map(function(chat) {
@@ -206,7 +271,18 @@ var Row = React.createClass({
         );
     }
 });
-
+var FolderRow = React.createClass({
+   render:function () {
+       return(
+           <a href="#" className="list-group-item" style={{borderRadius:"0px"}}>
+               <i className={this.props.IconClass} aria-hidden="true" style={{paddingLeft:"10px"}}>
+               </i>
+               {this.props.content}
+               <i className="fa fa-trash onhover" aria-hidden="true" style={{float: "left"}}></i>
+           </a>
+       );
+   }
+});
 var RowForm = React.createClass({
     getInitialState: function() {
         return {InputName: ''};
@@ -238,7 +314,7 @@ var RowForm = React.createClass({
                            onChange={this.handleFilenameChange}
                            style={{width:"70%"}}
                     />
-                    <input type="submit" value="Post" />
+                    <input className="btn btn-success" type="submit" value="creat" style={{borderRadius:"0px",padding: "4px"}}/>
                 </form>
             </a>
         );
@@ -248,8 +324,9 @@ var RowList = React.createClass({
     render:function () {
         var rowNodes =this.props.data.map(function(folder) {
             return (
-                <Row content={folder.foldername} key={folder.id} IconClass={"fa fa-folder-open fa-lg"}>
-                </Row>
+                <FolderRow content={folder.foldername} key={folder.id} IconClass={"fa fa-folder-open fa-lg"}>
+
+                </FolderRow>
             );
         });
         return(
@@ -288,7 +365,7 @@ var Body = React.createClass({
     render:function () {
         return (
             <div >
-                <TextArea/>
+                <SmsArea/>
                 <ChatPanel/>
                 <MainPanel data={data}/>
             </div>
