@@ -20,36 +20,96 @@ var TextArea = React.createClass({
 
 
 /**********************START OF CHAT PANEL COLUMN************************/
-var ChatPreviewRow = React.createClass({
+var smsdata = [
+    {id:1 ,username:"نفر اول",lastdate:"1 فروردين 1300", content:"نفر اول هستم"},
+    {id:2 ,username:"نفر دوم",lastdate:"2 فروردين 1300", content:"نفر دوم هستم.خوبي؟"},
+    {id:3 ,username:"نفر سوم",lastdate:"3 فروردين 1300", content:"نفر سوم هستم.. متن طولانی است متن طولانی است متن طولانی است متن طولانی است متن طولانی است متن طولانی است متن طولانی است"}
+    ];
+var ChatPreviewRowTop= React.createClass({
+   render:function () {
+       return(
+           <div id="top" style={{height:"50%",display:"flex"}}>
+               <div id="top-left" style={{height:"100%",width:"30%",direction:"rtl"}}>
+                   <span style={{float:"left",fontSize:"15px"}}> {this.props.date}</span>
+               </div>
+               <div id="top-right"  style={{height:"100%",width:"70%",direction:"rtl"}}>
+                   <ul className="list-inline" style={{padding:"0px"}}>
+                       <li>
+                           <input type="checkbox" value=""/>
+                       </li>
+                       <li>
+                           <img src={'./images/blank-person.png'}  className="img-circle " style={{height:"40px",width:"40px"}} />
+                       </li>
+                       <li style={{
+                           whiteSpace: "nowrap",
+                           overflow: "hidden",
+                           textOverflow: "ellipsis",
+                           width: "65%"}}>
+                                <span>
+                                    {this.props.username}
+                                </span>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+       );
+   }
+});
+var ChatPreviewRowBottom= React.createClass({
     render:function () {
         return(
-            <div>
-                <div id="top">
-                    <div id="top-right">
-
-                    </div>
-                    <div id="top-left">
-
-                    </div>
+            <div id="bottom"  style={{height:"50%",display:"flex"}}>
+                <div id="bottom-left"  style={{height:"100%",width:"50%"}}>
+                    <ul  id="SmsPriviewIcons" className="list-inline">
+                        <li>
+                            <a className="link onhover ">
+                                <i className="fa fa-trash fa-lg" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a className="link onhover">
+                                <i className="fa fa-star fa-lg" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div id="buttom">
-                    <div id="buttom-right">
-
-                    </div>
-                    <div id="buttom-left">
-
-                    </div>
+                <div id="bottom-right"  style={{height:"100%",width:"50%",direction:"rtl"}}>
+                    <p className="tooltipp bottom_right_chat_preview" >
+                        {this.props.content}
+                        <span className="dropdown-menu-right" >
+                            {this.props.content}
+                        </span>
+                    </p>
                 </div>
             </div>
         );
     }
 });
 
-var SmsList = React.createClass({
+
+var ChatPreviewRow = React.createClass({
     render:function () {
         return(
+                <div id="sms-preview"  className="SmsPreview" style={{minHeight:"80px"}}>
+                    <ChatPreviewRowTop username={this.props.username} date={this.props.date}/>
+                    <ChatPreviewRowBottom content={this.props.content}/>
+                </div>
+        );
+    }
+});
+
+var SmsList = React.createClass({
+    render:function () {
+        var smsNodes =this.props.data.map(function(chat) {
+            return (
+                <ChatPreviewRow username={chat.username}date={chat.lastdate} content={chat.content}/>
+            );
+        });
+        return(
             <div>
-                <ChatPreviewRow/>
+                {smsNodes}
+                <hr/>
+                <p className="text-center">انتهای لیست</p>
             </div>
         );
     }
@@ -79,7 +139,7 @@ var SettingRow=React.createClass({
                         </li>
                         <li>
                             <a className="link onhover">
-                                <i className="fa fa-refresh fa-lg fa-spin" aria-hidden="true"></i>
+                                <i className="fa fa-refresh fa-lg" aria-hidden="true"></i>
                             </a>
                         </li>
                     </ul>
@@ -120,6 +180,7 @@ var ChatPanel = React.createClass({
                 <hr/>
                 <SettingRow/>
                 <hr/>
+                <SmsList data={smsdata}/>
             </div>
         );
     }
@@ -141,7 +202,7 @@ var Row = React.createClass({
                 <i className={this.props.IconClass} aria-hidden="true" style={{paddingLeft:"10px"}}>
                 </i>
                 {this.props.content}
-             </a>
+            </a>
         );
     }
 });
@@ -171,36 +232,36 @@ var RowForm = React.createClass({
         return (
             <a href="#" className="list-group-item" style={{borderRadius:"0px"}}>
                 <form onSubmit={this.handleSubmit} >
-                        <input type="text"
-                               placeholder="نام پوشه"
-                               value={this.state.filename}
-                               onChange={this.handleFilenameChange}
-                               style={{width:"70%"}}
-                        />
-                        <input type="submit" value="Post" />
+                    <input type="text"
+                           placeholder="نام پوشه"
+                           value={this.state.filename}
+                           onChange={this.handleFilenameChange}
+                           style={{width:"70%"}}
+                    />
+                    <input type="submit" value="Post" />
                 </form>
             </a>
         );
     }
 });
 var RowList = React.createClass({
-   render:function () {
-       var rowNodes =this.props.data.map(function(folder) {
-           return (
-               <Row content={folder.foldername} key={folder.id} IconClass={"fa fa-folder-open fa-lg"}>
-               </Row>
-           );
-       });
-       return(
-           <div className="list-group" style={{borderRadius:"0px"}}>
-               <Row content={"صندوق پیام های من"} IconClass={"fa fa-envelope fa-lg onhover"}/>
-               <Row content={"پیش نویس های من"} IconClass={"fa fa-file-text fa-lg onhover"}/>
-               <Row content={"حذف شده های من"} IconClass={"fa fa-trash fa-lg onhover"}/>
-               {rowNodes}
-               <RowForm/>
-           </div>
-       );
-   }
+    render:function () {
+        var rowNodes =this.props.data.map(function(folder) {
+            return (
+                <Row content={folder.foldername} key={folder.id} IconClass={"fa fa-folder-open fa-lg"}>
+                </Row>
+            );
+        });
+        return(
+            <div className="list-group" style={{borderRadius:"0px"}}>
+                <Row content={"صندوق پیام های من"} IconClass={"fa fa-envelope fa-lg onhover"}/>
+                <Row content={"پیش نویس های من"} IconClass={"fa fa-file-text fa-lg onhover"}/>
+                <Row content={"حذف شده های من"} IconClass={"fa fa-trash fa-lg onhover"}/>
+                {rowNodes}
+                <RowForm/>
+            </div>
+        );
+    }
 });
 
 var MainPanel = React.createClass({
