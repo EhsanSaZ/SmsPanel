@@ -31,7 +31,7 @@ var Header = React.createClass({
                         <div className="collapse navbar-collapse" id="myNavbar">
                             <ul className="nav navbar-nav navbar-right text-center">
                                 <li className="header_items header_li" style={{padding:"8px"}}>
-                                    <button className="new_massage_btn"> پیام جدید</button>
+                                    <a href="#popup1" style={{padding:"0",borderRadius:"5px"}}><button className="new_massage_btn"> پیام جدید</button></a>
                                 </li>
                                 <li className="header_items header_li" style={{padding:"12px"}}>
                                     <p style={{color:"white"}}>پنل پیام کوتاه </p>
@@ -44,7 +44,6 @@ var Header = React.createClass({
                         </div>
                     </div>
                 </nav>
-
             </div>
         );
     }

@@ -2,6 +2,8 @@
  * Created by esaeedizadeh on 8/20/2016.
  */
 import React from 'react';
+
+/**********************START OF SMS AREA COLUMN************************/
 var SmsForm = React.createClass({
     render:function () {
         return(
@@ -38,7 +40,6 @@ var SmsAreaBottom = React.createClass({
         );
     }
 });
-
 var SmsAreaTopSetting = React.createClass({
     render:function () {
         return(
@@ -144,9 +145,7 @@ var SmsArea = React.createClass({
         );
     }
 });
-
-
-
+/**********************END OF SMS AREA COLUMN************************/
 /**********************START OF CHAT PANEL COLUMN************************/
 var smsdata = [
     {id:1 ,username:"نفر اول",lastdate:"1 فروردين 1300", content:"نفر اول هستم"},

@@ -5,12 +5,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './header'
 import Main_body from './main-body'
+import NewMessage from './new_message'
 var App = React.createClass({
    render:function () {
        return (
            <div>
                <Header/>
                <Main_body/>
+               <NewMessage/>
            </div>
        );
    } 
