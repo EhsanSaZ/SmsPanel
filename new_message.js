@@ -46,12 +46,15 @@ var NewMsg=React.createClass({
         );
     }
 });
-var PopUpNav=React.createClass({
+var ModalHeader=React.createClass({
     render:function(){
         return(
-            <div id="PopUpNav" style={{height:"40px",backgroundColor:" #393c43",padding:"10px"}}>
-                <a  href="#"><i className="fa fa-times close"  style={{color:"white",opacity:"1"}} aria-hidden="true"></i></a>
-                <p style={{color:"white",opacity:"1"}} >پیام جدید</p>
+            <div id="ModalHeader" className="modal-header" style={{backgroundColor:" #393c43"}}>
+                <button type="button" className="close" data-dismiss="modal">
+                    <i className="fa fa-times close"  style={{color:"white",opacity:"1"}} aria-hidden="true"></i>
+                </button>
+
+                <h4  className="modal-title" style={{color:"white",opacity:"1"}}  >پیام جدید</h4>
             </div>
         );
     }
@@ -60,14 +63,18 @@ var PopUpNav=React.createClass({
 var PopUp=React.createClass({
    render:function(){
        return(
-            <div>
-                <div id="popup1" className="overlay">
-                    <div className="popup">
-                       <PopUpNav/>
-                       <NewMsg/>
-                    </div>
-                </div>
-            </div>
+           <div className="modal fade" id="myModal" role="dialog">
+               <div className="modal-dialog">
+                   <div className="modal-content">
+                       <ModalHeader/>
+                       <div className="modal-body" style={{backgroundColor:"#F1FFE9"}}>
+                          <NewMsg/>
+                       </div>
+
+                   </div>
+
+               </div>
+           </div>
        );
    }
 });

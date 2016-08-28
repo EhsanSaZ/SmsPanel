@@ -127,7 +127,7 @@ p.tooltipp span:hover
     float: right;
     word-wrap: break-word
 }
-/*
+
 .bubble-you:after
 {
     content: '';
@@ -141,8 +141,7 @@ p.tooltipp span:hover
     margin-top: -8px;
     right: -9px;
     top: 50%;
-}*/
-/*
+}
 .bubble-you:before
 {
     content: '';
@@ -157,8 +156,6 @@ p.tooltipp span:hover
     right: -12px;
     top: 50%;
 }
-
-*/
 .bubble-contact
 {
     direction: rtl;
@@ -174,7 +171,7 @@ p.tooltipp span:hover
     float: left;
     word-wrap: break-word
 }
-/*
+
 .bubble-contact:after
 {
     content: '';
@@ -189,8 +186,7 @@ p.tooltipp span:hover
     left: -9px;
     top: 50%;
 }
-*/
-/*
+
 .bubble-contact:before
 {
     content: '';
@@ -204,7 +200,7 @@ p.tooltipp span:hover
     margin-top: -9px;
     left: -12px;
     top: 50%;
-}*/
+}
 .sms-form{
     background-color:white;
 }
@@ -263,4 +259,8 @@ p.tooltipp span:hover
 .new-msg-content{
     background-color: gold;
     height: 300px;
+}
+.modal-backdrop
+{
+    opacity:0.8 !important;
 }

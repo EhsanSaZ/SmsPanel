@@ -10,8 +10,10 @@ var App = React.createClass({
    render:function () {
        return (
            <div>
-               <Header/>
-               <Main_body/>
+                <div>
+                    <Header/>
+                    <Main_body/>
+                </div>
                <NewMessage/>
            </div>
        );
