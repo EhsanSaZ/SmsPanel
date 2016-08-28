@@ -12,7 +12,6 @@ body {
     font-size: 18px;
     background-color:#8c8c8c;
 }
-/* line 51, ../sass/main.scss */
 body nav#nav_bar {
     background-color: #393c43;
 }
@@ -111,4 +110,124 @@ p.tooltipp span:hover
     width: 100%;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.bubble-you
+{
+    direction: rtl;
+    position: relative;
+    min-width: 25%;
+    max-width: 50%;
+    padding: 0px;
+    background: #F1FFE9;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border:  2px solid rgb(139,195,74);
+    float: right;
+    word-wrap: break-word
+}
+
+.bubble-you:after
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 8px 0 8px 9px;
+    border-color: transparent #F1FFE9;
+    display: block;
+    width: 0;
+    z-index: 1;
+    margin-top: -8px;
+    right: -9px;
+    top: 50%;
+}
+
+.bubble-you:before
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 9px 0 9px 10px;
+    border-color: transparent  rgb(139,195,74);
+    display: block;
+    width: 0;
+    z-index: 0;
+    margin-top: -9px;
+    right: -12px;
+    top: 50%;
+}
+
+
+.bubble-contact
+{
+    direction: rtl;
+    position: relative;
+    min-width: 25%;
+    max-width: 50%;
+    padding: 0px;
+    background: #ffafc1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border:  2px solid #ff719b;
+    float: left;
+    word-wrap: break-word
+}
+
+.bubble-contact:after
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 8px 9px 8px 0;
+    border-color: transparent #ffafc1;
+    display: block;
+    width: 0;
+    z-index: 1;
+    margin-top: -8px;
+    left: -9px;
+    top: 50%;
+}
+
+.bubble-contact:before
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 9px 10px 9px 0;
+    border-color: transparent  #ff719b;
+    display: block;
+    width: 0;
+    z-index: 0;
+    margin-top: -9px;
+    left: -12px;
+    top: 50%;
+}
+.sms-form{
+    background-color:white;
+}
+.sms-text-area{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    display: block;
+    resize:none;
+    width:100%;
+    height:100%;
+    direction: rtl;
+
+}
+.sms-text-area:hover{
+    background-color: rgba(211, 211, 211, 0.49);
+}
+.sms-form-submit{
+    background-color:white;
+    border: 0;
+}
+.sms-form-submit:hover{
+    background-color: rgba(211, 211, 211, 0.49);
+}
+.sms-form-submit:hover > i{
+    color:rgb(139,195,74) ;
 }

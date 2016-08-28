@@ -2,11 +2,38 @@
  * Created by esaeedizadeh on 8/20/2016.
  */
 import React from 'react';
+var SmsForm = React.createClass({
+    render:function () {
+        return(
+            <div id="SmsForm" className="sms-form" style={{width:"90%",height:"100%",
+                position:"absolute",bottom:"0",right:"0",overflowY:"auto"}}>
+                <textarea className="sms-text-area emojis-wysiwyg"
+                          style={{height:"100%"}}
+                          data-emojiable="true"
+                          placeholder="یک پیام بنویسید...">
+                </textarea>
+            </div>
+        );
+    }
+});
+var SmsFormSubmit = React.createClass({
+    render:function () {
+        return(
+            <div id="SmsFormSubmit" style={{width:"10%",height:"50%",position:"absolute",bottom:"0",left:"0"}}>
+                <button type="submit" id="kk"   className="sms-form-submit" value="Submit" style={{width:"100%",height:"100%"}}>
+                    <i className="fa fa-paper-plane" aria-hidden="true"></i>
+                </button>
+            </div>
+        );
+    }
+});
 var SmsAreaBottom = React.createClass({
     render:function () {
         return(
-            <div style={{minHeight:"80px",backgroundColor:"lightblue"}}>
-
+            <div id="SmsAreaBottom" style={{minHeight:"11vh",maxHeight:"11vh",backgroundColor:"white",
+                marginBottom:"10px",position:"relative"}}>
+                    <SmsForm/>
+                    <SmsFormSubmit/>
             </div>
         );
     }
@@ -15,7 +42,7 @@ var SmsAreaBottom = React.createClass({
 var SmsAreaTopSetting = React.createClass({
     render:function () {
         return(
-                <div style={{display:"flex",backgroundColor:"lightgray",paddingLeft:"10px",
+                <div id="SmsAreaTopSetting" style={{display:"flex",backgroundColor:"lightgray",paddingLeft:"10px",
                     paddingRight:"10px"}}>
                     <div style={{width:"100%" ,direction:"rtl",marginTop:"15px"}}>
                         <ul className="list-inline">
@@ -44,11 +71,38 @@ var SmsAreaTopSetting = React.createClass({
         );
     }
 });
-var SmsRows = React.createClass({
+var SmsRowTop = React.createClass({
     render:function () {
         return(
-            <div>
-
+            <div id="SmsRowTop" className={this.props.MassageClass}>
+                <p style={{margin:"3px"}}>
+                    متن متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن متن
+                    !!!!!!!!!@@@@@@@@@@@@@@@@#######
+                    متن متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن متن
+                </p>
+            </div>
+        );
+    }
+});
+var SmsRowBottom = React.createClass({
+    render:function () {
+        return(
+            <div id="SmsRowBottom">
+            </div>
+        );
+    }
+});
+var SmsRow = React.createClass({
+    render:function () {
+        return(
+            <div id="SmsRow" style={{display:"table",width:"100%",padding:"15px"}}>
+                <SmsRowTop MassageClass={this.props.MassageClass}/>
+                <SmsRowBottom/>
             </div>
         );
     }
@@ -56,8 +110,13 @@ var SmsRows = React.createClass({
 var SmsAreaTopShowChat = React.createClass({
     render:function () {
         return(
-            <div>
-
+            <div id="SmsAreaTopShowChat" style={{minHeight:"55vh",maxHeight:"55vh",
+                overflow:"auto",backgroundColor:"white",border:"1px solid #393c43"}}>
+                <SmsRow MassageClass={"bubble-you"}/>
+                <SmsRow MassageClass={"bubble-contact"}/>
+                <SmsRow MassageClass={"bubble-you"}/>
+                <SmsRow MassageClass={"bubble-you"}/>
+                <SmsRow MassageClass={"bubble-contact"}/>
             </div>
         );
     }
@@ -65,11 +124,12 @@ var SmsAreaTopShowChat = React.createClass({
 var SmsAreaTop = React.createClass({
     render:function () {
         return(
-            <div>
+            <div id="SmsAreaTop" >
                 <hr/>
                 <SmsAreaTopSetting/>
                 <hr/>
                 <SmsAreaTopShowChat/>
+                <hr/>
             </div>
         );
     }
@@ -77,7 +137,7 @@ var SmsAreaTop = React.createClass({
 var SmsArea = React.createClass({
     render:function () {
         return(
-            <div className="col-sm-7 cols_height" style={{height: "90vh", minHeight :"90vh",backgroundColor:"#F1FFE9"}}>
+            <div id="SmsArea" className="col-sm-6 cols_height" style={{height: "90vh", minHeight :"90vh",backgroundColor:"#F1FFE9"}}>
                 <SmsAreaTop/>
                 <SmsAreaBottom/>
             </div>
@@ -240,7 +300,7 @@ var SettingRow=React.createClass({
 var ChatPanel = React.createClass({
     render:function () {
         return(
-            <div className="col-sm-3 cols_height" style={{backgroundColor:"#F1FFE9",
+            <div className="col-sm-4 cols_height" style={{backgroundColor:"#F1FFE9",
                 height:"90vh", minHeight :"90vh",borderLeft:"1px solid #393c43"}}>
                 <hr/>
                 <SettingRow/>
