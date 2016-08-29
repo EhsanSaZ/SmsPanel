@@ -43,7 +43,7 @@ var SmsAreaBottom = React.createClass({
 var SmsAreaTopSetting = React.createClass({
     render:function () {
         return(
-                <div id="SmsAreaTopSetting" style={{display:"flex",backgroundColor:"lightgray",paddingLeft:"10px",
+                <div id="SmsAreaTopSetting" style={{display:"flex",backgroundColor:"#00E676",paddingLeft:"10px",
                     paddingRight:"10px"}}>
                     <div style={{width:"100%" ,direction:"rtl",marginTop:"15px"}}>
                         <ul className="list-inline">
@@ -126,11 +126,11 @@ var SmsAreaTop = React.createClass({
     render:function () {
         return(
             <div id="SmsAreaTop" >
-                <hr/>
+                <hr className="style-one"/>
                 <SmsAreaTopSetting/>
-                <hr/>
+                <hr className="style-one"/>
                 <SmsAreaTopShowChat/>
-                <hr/>
+                <hr className="style-one"/>
             </div>
         );
     }
@@ -138,7 +138,7 @@ var SmsAreaTop = React.createClass({
 var SmsArea = React.createClass({
     render:function () {
         return(
-            <div id="SmsArea" className="col-sm-6 cols_height" style={{height: "90vh", minHeight :"90vh",backgroundColor:"#F1FFE9"}}>
+            <div id="SmsArea" className="col-sm-6 cols_height" style={{height: "90vh", minHeight :"90vh",backgroundColor:"#B9F6CA"}}>
                 <SmsAreaTop/>
                 <SmsAreaBottom/>
             </div>
@@ -232,7 +232,7 @@ var SmsList = React.createClass({
         return(
             <div>
                 {smsNodes}
-                <hr/>
+                <hr className="style-one"/>
                 <p className="text-center">انتهای لیست</p>
             </div>
         );
@@ -242,7 +242,7 @@ var SmsList = React.createClass({
 var SettingRow=React.createClass({
     render:function () {
         return(
-            <div style={{display:"flex",marginTop:"10px",backgroundColor:"lightgray",paddingTop:"10px",paddingLeft:"10px",
+            <div style={{display:"flex",marginTop:"10px",backgroundColor:"#00E676",paddingTop:"10px",paddingLeft:"10px",
             paddingRight:"10px"}}>
                 <div style={{width:"50%"}}>
                     <ul className="list-inline">
@@ -299,11 +299,11 @@ var SettingRow=React.createClass({
 var ChatPanel = React.createClass({
     render:function () {
         return(
-            <div className="col-sm-4 cols_height" style={{backgroundColor:"#F1FFE9",
+            <div className="col-sm-4 cols_height" style={{backgroundColor:"#B9F6CA",
                 height:"90vh", minHeight :"90vh",borderLeft:"1px solid #393c43"}}>
-                <hr/>
+                <hr className="style-one"/>
                 <SettingRow/>
-                <hr/>
+                <hr  className="style-one"/>
                 <SmsList data={smsdata}/>
             </div>
         );
@@ -406,13 +406,22 @@ var MainPanel = React.createClass({
         var RowsData=this.props.data;
         RowsData.splice(0,1);
         return(
-            <div className="col-sm-2 cols_height" style={{backgroundColor:"#F1FFE9",
+            <div className="col-sm-2 cols_height" style={{backgroundColor:"#B9F6CA",
                 height: "90vh", minHeight :"90vh",borderLeft:"1px solid #393c43"}}>
-                <div style={{direction:"rtl"}}>
-                    <hr/>
+                <div id="MainPanelTop" style={{direction:"rtl"}}>
+                    <hr className="style-one"/>
                     <h2>{Name}</h2>
-                    <hr/>
+                    <hr className="style-one"/>
                     <RowList data={RowsData}/>
+                </div>
+                <hr className="style-one"/>
+                <div id="MainPanelBotton" className="main-panel-bottom">
+                    <div id="Remain" className="charge text-center">
+                        <p>مانده 5000 تومان   </p>
+                    </div>
+                    <div id="ChargeSim"  className="text-center">
+                        <button className="charge_btn">شارژ  <i className="fa fa-credit-card" aria-hidden="true"></i> </button>
+                    </div>
                 </div>
 
             </div>

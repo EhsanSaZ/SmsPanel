@@ -7,7 +7,7 @@ var Header = React.createClass({
     render:function () {
 
         return (
-            <div className="header_border" >
+            <div  id="header" className="header_border" >
                 <nav className="navbar  nav-foot-color" id="nav_bar"  style={{marginBottom:'0',borderRadius:'0',minHeight:"9vh"}}>
                     <div className="container-fluid" style={{marginTop: "7px"}}>
                         <div className="navbar-header">

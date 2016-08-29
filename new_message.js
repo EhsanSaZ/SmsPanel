@@ -2,24 +2,6 @@
  * Created by esaeedizadeh on 8/28/2016.
  */
 import React from 'react';
-var NewMsgTop=React.createClass({
-    render:function(){
-        return(
-            <div>
-
-            </div>
-        );
-    }
-});
-var NewMsgBottom=React.createClass({
-    render:function(){
-        return(
-            <div>
-
-            </div>
-        );
-    }
-});
 var NewMsg=React.createClass({
     render:function(){
         return(
@@ -30,7 +12,7 @@ var NewMsg=React.createClass({
                         <button style={{width:"10%",float:"right",height:"100%"}} >به</button>
                     </div>
                     <div id="NewMsgBottom" style={{width:"100%"}}>
-                        <div id="remain" style={{width:"100%",height:"30px",direction:"rtl",backgroundColor:"lightgray"}}>
+                        <div id="remain" style={{width:"100%",height:"30px",direction:"rtl",backgroundColor:"#00E676"}}>
                             <label>1000 تومان</label>
                         </div>
                         <div id="message-area" style={{width:"100%",height:"190px",backgroundColor:"pink"}}>
@@ -38,7 +20,7 @@ var NewMsg=React.createClass({
 
                             </textarea>
                         </div>
-                        <button style={{width:"100%",height:"40px",backgroundColor:"#8BC34A",border:"0"}}>ارسال</button>
+                        <button style={{width:"100%",height:"40px",backgroundColor:"#00E676",border:"0"}}>ارسال</button>
                     </div>
                 </form>
 
@@ -49,11 +31,10 @@ var NewMsg=React.createClass({
 var ModalHeader=React.createClass({
     render:function(){
         return(
-            <div id="ModalHeader" className="modal-header" style={{backgroundColor:" #393c43"}}>
+            <div id="ModalHeader" className="modal-header" style={{backgroundColor:" #009688"}}>
                 <button type="button" className="close" data-dismiss="modal">
                     <i className="fa fa-times close"  style={{color:"white",opacity:"1"}} aria-hidden="true"></i>
                 </button>
-
                 <h4  className="modal-title" style={{color:"white",opacity:"1"}}  >پیام جدید</h4>
             </div>
         );
@@ -67,7 +48,7 @@ var PopUp=React.createClass({
                <div className="modal-dialog">
                    <div className="modal-content">
                        <ModalHeader/>
-                       <div className="modal-body" style={{backgroundColor:"#F1FFE9"}}>
+                       <div className="modal-body" style={{backgroundColor:"#B9F6CA"}}>
                           <NewMsg/>
                        </div>
 

@@ -10,10 +10,10 @@
 body {
     font-family: "B Yekan";
     font-size: 18px;
-    background-color:#8c8c8c;
 }
+
 body nav#nav_bar {
-    background-color: #393c43;
+    background-color: #009688;
 }
 .cols_height{
     overflow-x: auto;
@@ -24,18 +24,45 @@ body nav#nav_bar {
     color: white;
 }
 .new_massage_btn{
-    width: 150px;px;
+    width: 150px;
     height: 36px;
     border-radius: 5px;
-    border: 2px solid rgb(139,195,74);
-    background-color: #F1FFE9;
+    border: 2px solid #64DD17;
+    background-color:  #00E676;
+
 }
 .header_border{
-    border-bottom: 1vh solid rgb(139,195,74);
+    border-bottom: 1vh solid #64DD17;
 }
 .header_items{
     margin-right: 10px;
     margin-left: 10px;
+}
+.list-group > a{
+    background-color: #C8E6C9 !important;
+    border-color:#393c43 ;
+}
+.list-group > a:hover{
+    background-color: #66BB6A !important;
+}
+.main-panel-bottom{
+    margin-bottom: 2vh;
+}
+.charge{
+    width:100%;
+    background-color:#C8E6C9;
+    border: 1px solid #393c43;
+    margin-bottom: 3vh;
+}
+.charge_btn{
+    width: 70%;
+    height: 36px;
+    border-radius: 5px;
+    border: 2px solid #64DD17;
+    background-color:  #00E676;
+}
+.charge:hover{
+    background-color:#66BB6A ;
 }
 .sort_button{
     background-color:#8d8d8d;
@@ -52,16 +79,16 @@ body nav#nav_bar {
     cursor: pointer;
 }
 .onhover:hover{
-    color: #ffe200;
+    color: #FF4081;
 }
 
 .SmsPreview {
-    background-color: #4abeff;
+    background-color: #C8E6C9;
     padding: 3px;
-    border-bottom: 1px solid #393c43;
+    border: 1px solid #393c43;
 }
 .SmsPreview:hover{
-    background-color: #3ea1d7;
+    background-color: #66BB6A;
 
 }
 .SmsPreview #SmsPriviewIcons {
@@ -119,11 +146,11 @@ p.tooltipp span:hover
     min-width: 25%;
     max-width: 50%;
     padding: 0px;
-    background: #F1FFE9;
+    background: #C8E6C9;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    border:  2px solid rgb(139,195,74);
+    border:  2px solid #4CAF50;
     float: right;
     word-wrap: break-word
 }
@@ -134,7 +161,7 @@ p.tooltipp span:hover
     position: absolute;
     border-style: solid;
     border-width: 8px 0 8px 9px;
-    border-color: transparent #F1FFE9;
+    border-color: transparent #C8E6C9;
     display: block;
     width: 0;
     z-index: 1;
@@ -148,7 +175,7 @@ p.tooltipp span:hover
     position: absolute;
     border-style: solid;
     border-width: 9px 0 9px 10px;
-    border-color: transparent  rgb(139,195,74);
+    border-color: transparent  #4CAF50;
     display: block;
     width: 0;
     z-index: 0;
@@ -163,11 +190,11 @@ p.tooltipp span:hover
     min-width: 25%;
     max-width: 50%;
     padding: 0px;
-    background: #ffafc1;
+    background: #FFCDD2;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    border:  2px solid #ff719b;
+    border:  2px solid #F44336;
     float: left;
     word-wrap: break-word
 }
@@ -178,7 +205,7 @@ p.tooltipp span:hover
     position: absolute;
     border-style: solid;
     border-width: 8px 9px 8px 0;
-    border-color: transparent #ffafc1;
+    border-color: transparent #FFCDD2;
     display: block;
     width: 0;
     z-index: 1;
@@ -193,7 +220,7 @@ p.tooltipp span:hover
     position: absolute;
     border-style: solid;
     border-width: 9px 10px 9px 0;
-    border-color: transparent  #ff719b;
+    border-color: transparent  #F44336;
     display: block;
     width: 0;
     z-index: 0;
@@ -264,3 +291,16 @@ p.tooltipp span:hover
 {
     opacity:0.8 !important;
 }
+
+/************************************/
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+}
+
+/************************************/
